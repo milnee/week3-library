@@ -2,13 +2,28 @@
 
 namespace Library
 {
-    internal class Book
+    class Book
     {
-        public string Title;
-        public string Author;
-        public string ISBN;
+        private string title;
+        private string author;
+        private string isbn;
 
-        // Constructor that requires title, author, and ISBN
+        public string Title
+        {
+            get { return title; }
+            set { title = value; }
+        }
+        public string Author
+        {
+            get { return author; }
+            set { author = value; }
+        }
+        public string ISBN
+        {
+            get { return isbn; }
+            set { isbn = value; }
+        }
+
         public Book(string bookTitle, string bookAuthor, string bookISBN)
         {
             Title = bookTitle;
@@ -16,21 +31,12 @@ namespace Library
             ISBN = bookISBN;
         }
 
-        void DisplayInfo()
+        public void DisplayInfo()
         {
             Console.WriteLine($"Book title: {Title}");
             Console.WriteLine($"Book Author: {Author}");
             Console.WriteLine($"Book ISBN: {ISBN}");
             Console.WriteLine();
-        }
-
-        static void Main(string[] args)
-        {
-            Book book1 = new Book("C# for beginners", "BillGates", "12345678");
-            Book book2 = new Book("C#", "Microsoft", "1234");
-
-            book1.DisplayInfo();
-            book2.DisplayInfo();
         }
     }
 }

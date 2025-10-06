@@ -1,41 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Library
 {
-    internal class Member
+    class Member
     {
-
         private int memberId;
         private string name;
         private string address;
         private int phone;
 
-        // public properties
+        // Public properties
         public int MemberId
         {
             get { return memberId; }
             private set { memberId = value; }
-       // private setter makes it read-only
         }
         public string Name
-            {
-            get { return name; }  // get method
-            set { name = value; } // set method
+        {
+            get { return name; }
+            set { name = value; }
         }
         public string Address
         {
-            get { return address; } // get method
-            set { address = value; } // set method
+            get { return address; }
+            set { address = value; }
         }
         public int Phone
         {
-            get { return phone; }  // get method
-            set { phone = value; } // set method
+            get { return phone; }
+            set { phone = value; }
         }
 
         // Constructor for new member
@@ -45,6 +38,16 @@ namespace Library
             this.Name = name;
             this.Address = address;
             this.Phone = phone;
+        }
+
+        // Add this method to display member info
+        public void DisplayInfo()
+        {
+            Console.WriteLine($"Member ID: {MemberId}");
+            Console.WriteLine($"Name: {Name}");
+            Console.WriteLine($"Address: {Address}");
+            Console.WriteLine($"Phone: {Phone}");
+            Console.WriteLine();
         }
     }
 }
