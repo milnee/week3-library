@@ -1,23 +1,47 @@
-﻿namespace Library
-{
-    
-}
-internal class Book
-{
-    public string Title;
-    public string Author;
-    public string ISBN;
+﻿using System;
 
-    static void Main(string[] args)
+namespace Library
+{
+    internal class Book
     {
-        Book myBook = new Book();
+        public string Title;
+        public string Author;
+        public string ISBN;
 
-        myBook.Title = "C# for beginners";
-        myBook.Author = "BillGates";
-        myBook.ISBN = "12345678";
+        void DisplayInfo()
+        {
+            Console.WriteLine($"Book title: {Title}");
+            Console.WriteLine($"Book Author: {Author}");
+            Console.WriteLine($"Book ISBN: {ISBN}");
+            Console.WriteLine();
 
-        Console.WriteLine("Title: " + myBook.Title);
-        Console.WriteLine("Author: " + myBook.Author);
-        Console.WriteLine("ISBN: " + myBook.ISBN);
-    }
+        }
+
+        static void Main(string[] args)
+        {
+
+            Book book1 = new Book();
+            book1.Title = "C# for beginners";
+            book1.Author = "BillGates";
+            book1.ISBN = "12345678";
+
+            // book 2
+            Book book2 = new Book();
+            book2.Title = "C#";
+            book2.Author = "Microsoft";
+            book2.ISBN = "1234";
+
+            // simpler way to displayinfo instead of writing Console.WriteLine each time
+            book1.DisplayInfo();
+            book2.DisplayInfo();
+
+
+        }
+
+
+
+
+
+
+   }
 }
